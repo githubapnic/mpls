@@ -114,6 +114,7 @@ Explore some of the other `show` command and observe the output
 Add a bandwidth constraint on either the current ingress or egress path, as per recomendataions above(Or choose your own)<BR>
 <BR>
 The following example is for `r4`<BR>
+
 ```
 interface Ethernet1/2
   traffic-engineering bandwidth 10 mbps
@@ -121,10 +122,6 @@ interface Ethernet1/2
   Now Observe the change in tunnel paths.
   
   _**REMEMBER** Build the tunnel from both directions.  RSVP tunnels are UNI-DIRECTIONAL_
-
-  Run the Verification commands above again.
-
-
 
 
 ### Step 3 - Verify Configuration:
