@@ -3,7 +3,7 @@
 ## Objective
 All the workshop lab routers are set to the default configuration and cabling requirements are prebuild according to the following topology diagram. Participants will be required to do the necessary configurations as part of a team according to the lab design specification explained in the presentation section. There are 5 routers (3 core and 2 CPE) in each team/region. So 4 team will finish 20 routers configuration in several steps throughout the workshop duration.  Workshop instructor will explain how the team will be organized, router will be allocated and IP address detail to access the lab routers.       
 
-<<Insert Topology here>>
+![](LabTopology-MPLS-20240523.png)
 
 ## Lab Notes
 This workshop is intended to be run on a real Arista routers or Virtual Routers with the above lab topologies set up. The routers are using both IPv4 and IPv6 supported EOS software. Participants should do their workshop module one configuration in several steps as explained below:
