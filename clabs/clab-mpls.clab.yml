@@ -6,7 +6,7 @@ mgmt:
 topology:
   kinds:
     ceos:
-      image: docker.apnictraining.net/ceos:4.30.3M
+      image: docker/ceos:4.30.3M
       binds:
         - mymapping.json:/mnt/flash/EosIntfMapping.json:ro
   nodes:
