@@ -1,0 +1,35 @@
+services:
+  srv1:
+    image: docker.apnictraining.net/ubuntu-apnic-ssh:20.04
+    restart: unless-stopped
+    hostname: srv1
+    container_name: srv1
+    networks:
+      - custom_mgmt
+
+  srv2:
+    image: docker.apnictraining.net/ubuntu-apnic-ssh:20.04
+    restart: unless-stopped
+    hostname: srv2
+    container_name: srv2
+    networks:
+      - custom_mgmt
+  srv3:
+    image: docker.apnictraining.net/ubuntu-apnic-ssh:20.04
+    restart: unless-stopped
+    hostname: srv3
+    container_name: srv3
+    networks:
+      - custom_mgmt
+  srv4:
+    image: docker.apnictraining.net/ubuntu-apnic-ssh:20.04
+    restart: unless-stopped
+    hostname: srv4
+    container_name: srv4
+    networks:
+      - custom_mgmt
+
+networks:
+  custom_mgmt:
+    name: custom_mgmt
+    external: true

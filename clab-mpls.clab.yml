@@ -1,0 +1,126 @@
+name: mpls
+prefix: ""
+mgmt:
+  network: custom_mgmt
+  ipv4-subnet: 172.18.31.0/24
+topology:
+  kinds:
+    ceos:
+      image: docker.apnictraining.net/ceos:4.30.3M
+      binds:
+        - mymapping.json:/mnt/flash/EosIntfMapping.json:ro
+  nodes:
+    r1:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.11
+    r2:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.12
+    r3:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.13
+    r4:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.21
+    r5:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.22
+    r6:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.23
+    r7:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.31
+    r8:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.32
+    r9:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.33
+    r10:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.41
+    r11:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.42
+    r12:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.43
+    r13:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.14
+    r14:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.15
+    r15:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.24
+    r16:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.25
+    r17:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.34
+    r18:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.35
+    r19:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.44
+    r20:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.45
+    sw1:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.91
+    sw2:
+        kind: ceos
+        mgmt-ipv4: 172.18.31.92
+
+    srv1:
+        kind: ext-container
+        mgmt-ipv4: 172.18.31.101
+    srv2:
+        kind: ext-container
+        mgmt-ipv4: 172.18.31.102
+    srv3:
+        kind: ext-container
+        mgmt-ipv4: 172.18.31.103
+    srv4:
+        kind: ext-container
+        mgmt-ipv4: 172.18.31.104
+
+
+  links:
+    - endpoints: ["r1:eth1","r3:eth1"]
+    - endpoints: ["r1:eth2","r2:eth2"]
+    - endpoints: ["r1:eth3","r13:eth3"]
+    - endpoints: ["r2:eth1","r3:eth2"]
+    - endpoints: ["r2:eth5","sw1:eth1"]
+    - endpoints: ["r2:eth4","sw2:eth4"]
+    - endpoints: ["r2:eth3","srv1:eth1"]
+    - endpoints: ["r3:eth3","r14:eth3"]
+    - endpoints: ["r4:eth1","r6:eth1"]
+    - endpoints: ["r4:eth2","r5:eth2"]
+    - endpoints: ["r4:eth3","r15:eth3"]
+    - endpoints: ["r5:eth1","r6:eth2"]
+    - endpoints: ["r5:eth4","sw1:eth3"]
+    - endpoints: ["sw2:eth1","r5:eth5"]
+    - endpoints: ["r5:eth3","srv2:eth1"]
+    - endpoints: ["r6:eth3","r16:eth3"]
+    - endpoints: ["r7:eth1","r9:eth1"]
+    - endpoints: ["r7:eth2","r8:eth1"]
+    - endpoints: ["r7:eth3","r17:eth3"]
+    - endpoints: ["r8:eth2","r9:eth2"]
+    - endpoints: ["r8:eth4","sw1:eth4"]
+    - endpoints: ["sw2:eth2","r8:eth5"]
+    - endpoints: ["r8:eth3","srv3:eth1"]
+    - endpoints: ["r9:eth3","r18:eth3"]
+    - endpoints: ["r10:eth1","r12:eth1"]
+    - endpoints: ["r10:eth2","r11:eth1"]
+    - endpoints: ["r10:eth3","r19:eth3"]
+    - endpoints: ["r11:eth2","r12:eth2"]
+    - endpoints: ["r11:eth5","sw1:eth2"]
+    - endpoints: ["sw2:eth3","r11:eth4"]
+    - endpoints: ["r11:eth3","srv4:eth1"]
+    - endpoints: ["r12:eth3","r20:eth3"]
