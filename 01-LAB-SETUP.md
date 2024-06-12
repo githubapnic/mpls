@@ -106,7 +106,7 @@ _**In Our example we will setup the IPv6 Loopback address on Router 4 (r4)**_
 
 ```
 interface loopback 0
-ipv6 address 2406:6400::4/1287
+ipv6 address 2406:6400::4/127
 ```
 
 _Study the Network topology diagram carefully (Along with the IP address chart provided) and configure all of the interfaces on your assigned routers._
