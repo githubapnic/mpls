@@ -80,7 +80,7 @@ _**The following will need to be done on all PE and P routers**_
   ```
 _**DO NOT** configure the PE<=>CE Links on the PE Routers_
 
-2. **FOR TUNNEL HEAD-END and END POINTS** <BR>Build and configure the tunnel and Path.  On Arista EOS this is done under the `router traffic-engineering` stanza:<BR>
+2. **FOR TUNNEL HEAD-END and TAIL-END** <BR>Build and configure the tunnel and Path.  On Arista EOS this is done under the `router traffic-engineering` stanza:<BR>
 * The following example is for `r1`
     ```
     router traffic-engineering
